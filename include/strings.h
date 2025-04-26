@@ -11,4 +11,9 @@ size_t sub_string(
     size_t output_lenght
 );
 
+size_t char_count(
+    const char *input,
+    const char search
+);
+
 #endif /* PSCL_STRINGS_H */
