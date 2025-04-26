@@ -2,10 +2,10 @@
 BIN_DIR := bin
 
 SRC := $(shell find src -name "*.c" 2>/dev/null) # find all .c files in src/
-SRC_OBJ := $(shell echo $(SRC) | sed 's/\.c/\.o/g') # put .o matching .c in same directory
+SRC_OBJ := $(SRC:.c=.o)
 
 TESTS := $(shell find tests -name "*.c" 2>/dev/null) # find all .c files in tests/
-TESTS_OBJ := $(shell echo $(TESTS) | sed 's/\.c/\.o/g') # put .o matching .c in same directory
+TESTS_OBJ := $(TESTS:.c=.o)
 
 # We only want to build binaries of tests - one binary per test file
 BIN := $(shell echo $(TESTS) | sed 's/\.c//g' | sed 's#tests/#$(BIN_DIR)/#') # convert each tests/name_test.c -> bin/name_test
