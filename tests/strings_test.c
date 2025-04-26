@@ -12,8 +12,8 @@ void tearDown(void) {
 }
 
 void test_sub_string_empty_string(void) {
-    size_t output_length = 5;
     const char *input = "";
+    size_t output_length = strlen(input) + 1;
     char output[output_length];
     size_t sub_string_length = sub_string(input, 0, 0, output, output_length);
 
@@ -23,7 +23,7 @@ void test_sub_string_empty_string(void) {
 
 void test_sub_string_start_end_equal(void) {
     const char *input = "abcde";
-    size_t output_length = strlen(input);
+    size_t output_length = strlen(input) + 1;
     char output[output_length];
     size_t sub_string_length = sub_string(input, 2, 2, output, output_length);
 
@@ -33,7 +33,7 @@ void test_sub_string_start_end_equal(void) {
 
 void test_sub_string_first_character(void) {
     const char *input = "abcde";
-    size_t output_length = strlen(input);
+    size_t output_length = strlen(input) + 1;
     char output[output_length];
     size_t sub_string_length = sub_string(input, 0, 1, output, output_length);
 
@@ -43,7 +43,7 @@ void test_sub_string_first_character(void) {
 
 void test_sub_string_last_character(void) {
     const char *input = "abcde";
-    size_t output_length = strlen(input);
+    size_t output_length = strlen(input) + 1;
     char output[output_length];
     size_t sub_string_length = sub_string(input, 4, 5, output, output_length);
 
