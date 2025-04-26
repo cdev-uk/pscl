@@ -51,6 +51,16 @@ void test_sub_string_last_character(void) {
     TEST_ASSERT_EQUAL_STRING("e", output);
 }
 
+void test_sub_string_whole_string(void) {
+    const char *input = "abcde";
+    size_t output_length = strlen(input) + 1;
+    char output[output_length];
+    size_t sub_string_length = sub_string(input, 0, 5, output, output_length);
+
+    TEST_ASSERT_EQUAL_size_t(5, sub_string_length);
+    TEST_ASSERT_EQUAL_STRING("abcde", output);
+}
+
 void test_char_count(void) {
     TEST_ASSERT_EQUAL_size_t(0, char_count("abcde", 'f'));
     TEST_ASSERT_EQUAL_size_t(1, char_count("abcde", 'a'));
@@ -69,6 +79,7 @@ int main(void) {
     RUN_TEST(test_sub_string_start_end_equal);
     RUN_TEST(test_sub_string_first_character);
     RUN_TEST(test_sub_string_last_character);
+    RUN_TEST(test_sub_string_whole_string);
 
     RUN_TEST(test_char_count);
 
