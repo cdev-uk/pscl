@@ -8,6 +8,7 @@ CC := clang
 CFLAGS := -Wall -Wextra -Werror -pedantic -I include -I src -I $(UNITY_INCLUDE)
 
 TEST_BINARIES = $(BIN_DIR)/strings_test
+TEST_BINARIES += $(BIN_DIR)/math_test
 
 # default rule is to run all the tests
 test: $(TEST_BINARIES)
@@ -21,9 +22,11 @@ test: $(TEST_BINARIES)
 $(BIN_DIR):
 	test -d $(BIN_DIR) || mkdir $(BIN_DIR)
 
-$(BIN_DIR)/strings_test: $(BIN_DIR) tests/strings_test.c src/strings.c include/strings.h $(UNITY_SRC) $(UNITY_INCLUDE)
-	$(CC) $(CFLAGS) tests/strings_test.c src/strings.c $(UNITY_SRC) -o $@
+$(BIN_DIR)/math_test: $(BIN_DIR) tests/math_test.c src/math.c include/math.h $(UNITY_SRC) $(UNITY_HEADER)
+	$(CC) $(CFLAGS) tests/math_test.c src/math.c $(UNITY_SRC) -o $@
 
+$(BIN_DIR)/strings_test: $(BIN_DIR) tests/strings_test.c src/strings.c include/strings.h $(UNITY_SRC) $(UNITY_HEADER)
+	$(CC) $(CFLAGS) tests/strings_test.c src/strings.c $(UNITY_SRC) -o $@
 
 clean:
 	rm -rf $(BIN_DIR)
