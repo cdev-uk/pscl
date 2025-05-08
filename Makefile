@@ -5,7 +5,7 @@ UNITY_HEADER := Unity/src/unity.h
 UNITY_SRC := Unity/src/unity.c
 
 CC := clang
-CFLAGS := -Wall -Wextra -Werror -pedantic -I include -I src -I $(UNITY_INCLUDE)
+CFLAGS := -Wall -Wextra -Werror --std=c89 -pedantic -I include -I src -I $(UNITY_INCLUDE)
 
 TEST_BINARIES = $(BIN_DIR)/strings_test
 TEST_BINARIES += $(BIN_DIR)/math_test

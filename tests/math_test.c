@@ -4,11 +4,11 @@
 #include "unity.h"
 
 void setUp(void) {
-    // Set up
+    /* deliberately empty but must be defined */
 }
 
 void tearDown(void) {
-    // Tear down
+    /* deliberately empty but must be defined */
 }
 
 void test_lmin_a_equals_b(void) {
