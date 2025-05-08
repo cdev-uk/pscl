@@ -1,9 +1,9 @@
 #include "../include/math.h"
 
-long lmin(long a, long b) {
+long pscl_lmin(long a, long b) {
     return a < b ? a : b;
 }
 
-long lmax(long a, long b) {
+long pscl_lmax(long a, long b) {
     return a > b ? a : b;
 }

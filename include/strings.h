@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 
-size_t sub_string(
+size_t pscl_sub_string(
     const char *input,
     size_t start,
     size_t end,
@@ -11,7 +11,7 @@ size_t sub_string(
     size_t output_lenght
 );
 
-size_t char_count(
+size_t pscl_char_count(
     const char *input,
     const char search
 );
