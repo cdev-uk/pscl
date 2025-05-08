@@ -19,7 +19,7 @@ test: $(TEST_BINARIES) cppcheck
 	done
 
 cppcheck:
-	cppcheck --enable=all --suppress=unusedFunction --suppress=missingIncludeSystem --std=c89 -iUnity .
+	cppcheck --enable=all --suppress=unusedFunction --suppress=missingInclude --std=c89 -iUnity .
 
 # create the bin directory if it does not already exist
 $(BIN_DIR):
