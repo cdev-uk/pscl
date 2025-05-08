@@ -18,6 +18,9 @@ test: $(TEST_BINARIES)
 		fi; \
 	done
 
+cppcheck:
+	cppcheck --std=c89 -iUnity .
+
 # create the bin directory if it does not already exist
 $(BIN_DIR):
 	test -d $(BIN_DIR) || mkdir $(BIN_DIR)
@@ -32,4 +35,5 @@ clean:
 	rm -rf $(BIN_DIR)
 
 .PHONY: clean
+.PHONY: cppcheck
 .PHONY: test
