@@ -11,7 +11,7 @@ TEST_BINARIES = $(BIN_DIR)/strings_test
 TEST_BINARIES += $(BIN_DIR)/math_test
 
 # default rule is to run all the tests
-test: $(TEST_BINARIES)
+test: $(TEST_BINARIES) cppcheck
 	@for file in $(BIN_DIR)/*; do \
 		if [ -x $$file ] && [ ! -d $$file ]; then \
 			$$file; \
@@ -19,7 +19,7 @@ test: $(TEST_BINARIES)
 	done
 
 cppcheck:
-	cppcheck --std=c89 -iUnity .
+	cppcheck --enable=all --suppress=unusedFunction --suppress=missingIncludeSystem --std=c89 -iUnity .
 
 # create the bin directory if it does not already exist
 $(BIN_DIR):
